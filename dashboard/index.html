@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Dashboard</title>
 
     <!-- Vendor files-->
     <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+    <!-- App files -->
+    <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-    <div class="container">
-    	<div class="app-panel" id="panel-login"></div>
-    	<div class="app-panel" id="panel-main"></div>
+	<div class="container-fluid" id="wrapper-loader">
+		Loader
+	</div>
+    <div class="container" id="wrapper-app">
+    	<div class="app-panel" id="panel-login">
+    		Login
+    	</div>
+    	<div class="app-panel" id="panel-main">
+    		Dashboard
+    	</div>
 	</div>
 </body>
 <!-- Vendor Scripts -->
 <script type="text/javascript" src="vendor/js/jquery.min.js"></script>
 <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
+<!-- App Scripts -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script>
+	$(document).ready(function(){
+		app.init();
+	});
+</script>
 </html>
