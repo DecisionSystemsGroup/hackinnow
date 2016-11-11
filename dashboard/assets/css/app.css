@@ -5,27 +5,25 @@
 	padding-top: 150px;
 }
 
-.stats, .box{
-	border: solid 1px black;
-}
-.stats{
-	#background: tomato;
-}
-
 .box{
 	background: teal;
 }
 
 .stats{
-	min-height: 70px;
-	line-height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+	padding: 15px 0px;
+	border: 1px solid rgba(215, 215, 215, 1);
+	background-color: rgba(230, 230, 230, 1);
 }
-.stats>span{
+.stats .icon{
+	font-size: 60px;
 }
-.stats>.title{
+.stats .title{
+	margin-top: -15px;
+	text-align: center;
+	font-size: 25px;
 }
-.stats>.value{
-	font-size: 2em;
+.stats .value{
+	margin-top: -15px;
+	font-size: 45px;
+	font-weight: 700;
 }
