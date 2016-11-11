@@ -2,6 +2,10 @@ body{
 	padding-top: 70px;
 	padding-bottom: 70px;
 }
+#content-wrapper{
+	
+	margin-top:45px;
+}
 #home_panel, #stats_panel, #rewards_panel{
 	display: none;
 }
