@@ -4,3 +4,28 @@
 #wrapper-loader{
 	padding-top: 150px;
 }
+
+.stats, .box{
+	border: solid 1px black;
+}
+.stats{
+	#background: tomato;
+}
+
+.box{
+	background: teal;
+}
+
+.stats{
+	min-height: 70px;
+	line-height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.stats>span{
+}
+.stats>.title{
+}
+.stats>.value{
+	font-size: 2em;
+}
