@@ -6,11 +6,9 @@
 		<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 		<link rel="stylesheet" href="vendor/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/master.css">
-		
+
 		<link rel="stylesheet" type="text/css" href="vendor/css/timecube.jquery.css">
-		
-	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="vendor/js/pie-chart.js" type="text/javascript"></script>
+
 
 	</head>
 	<body>
@@ -30,40 +28,27 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 		<div id="content" class="container-fluid">
-			<div id="home_panel" class="row">
-				
-						    <script type="text/javascript">
-				 $(document).ready(function () {
-				 
-            $('#demo-pie-3').pieChart({
-                barColor: '#68b828',
-                trackColor: '#eee',
-                lineCap: 'round',
-                lineWidth: 25,
-                rotate: -90,
-                onStep: function (from, to, percent) {
-                    $(this.element).find('.pie-value').html(Math.round(percent) );
-                }
-            });
-			
-			            $('#demo-pie-4').pieChart({
-                barColor: '#cc0000',
-                trackColor: '#eee',
-                lineCap: 'round',
-                lineWidth: 25,
-                rotate: -90,
-                onStep: function (from, to, percent) {
-                    $(this.element).find('.pie-value').html(Math.round(percent) );
-                }
-            });
-			
-				 });
-				 </script>
-				 <div id="demo-pie-3" class="pie-title-center col-xs-10 col-xs-offset-1" style="margin-top:55px" data-percent="+15"> <span class="pie-value"></span> </div>
-				 <br />
-				 <div id="demo-pie-4" class="pie-title-center col-xs-10 col-xs-offset-1" style="margin-top:55px" data-percent="-28"> <span class="pie-value"></span> </div>
-				 
-			</div>
+			<div id="home_panel" class="">
+				<div class="row">
+					<h2 class="text-center">Some Score</h2>
+					<div id="demo-pie-3"
+						class="pie-title-center col-xs-10 col-xs-offset-1"
+						data-percent="+15">
+
+						<span class="pie-value"></span>
+					</div>
+				</div>
+				<div class="row">
+					<h2 class="text-center" >Some Other Score</h2>
+					<div id="demo-pie-4"
+						class="pie-title-center col-xs-10 col-xs-offset-1"
+						data-percent="-28">
+
+						<span class="pie-value"></span>
+					</div>
+				</div>
+
+			 </div>
 			<div id="stats_panel" class="row">
 				Stats Panel
 			</div>
@@ -71,15 +56,10 @@
 				Rewards panel
 				<div id="content-wrapper">
 					<div id="timeline" class="timeCube"></div>
-
 				</div>
-					
-					
-					
-				
 			</div>
 		</div>
-		
+
 		<nav class="navbar navbar-inverse navbar-fixed-bottom">
 			<div class="container-fluid">
 				<div id="drawer_buttons" class="row">
@@ -102,7 +82,9 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-		<script src="vendor/js/timecube.jquery.js"></script> 
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="vendor/js/pie-chart.js" type="text/javascript"></script>
+		<script src="vendor/js/timecube.jquery.js"></script>
 		<script src="vendor/js/timecube.example.js"></script>
 
 		<script type="text/javascript" src="assets/js/master.js">
@@ -110,6 +92,27 @@
 		<script>
 			$(document).ready(function(){
 				master.init();
+				$('#demo-pie-3').pieChart({
+					barColor: '#68b828',
+					trackColor: '#eee',
+					lineCap: 'round',
+					lineWidth: 25,
+					rotate: -90,
+					onStep: function (from, to, percent) {
+						$(this.element).find('.pie-value').html(Math.round(percent) );
+					}
+				});
+
+				$('#demo-pie-4').pieChart({
+					barColor: '#cc0000',
+					trackColor: '#eee',
+					lineCap: 'round',
+					lineWidth: 25,
+					rotate: -90,
+					onStep: function (from, to, percent) {
+						$(this.element).find('.pie-value').html(Math.round(percent) );
+					}
+				});
 			});
 		</script>
 	</body>

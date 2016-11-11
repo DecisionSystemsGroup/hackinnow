@@ -3,7 +3,7 @@ body{
 	padding-bottom: 70px;
 }
 #content-wrapper{
-	
+
 	margin-top:45px;
 }
 #home_panel, #stats_panel, #rewards_panel{
@@ -26,6 +26,14 @@ body{
 }
 #drawer_buttons .button a:hover{
 	color: rgba(255, 255, 255, 1);
+}
+#home_panel{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+#home_panel .row{
+	border: 1px solid rgba(240, 240, 240, 1);
+	padding-bottom: 20px;
 }
 #page_name{
 	text-align: center;

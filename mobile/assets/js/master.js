@@ -12,6 +12,7 @@ var master = (function(){
 	}
 
 	function init(){
+		$('#page_name').text('Iosif Mpoukas');
 		_showPanel(homePanel);
 		_eventListeners();
 	}
@@ -22,18 +23,21 @@ var master = (function(){
 				$(statsPanel).fadeIn();
 			});
 			activePanel = statsPanel;
+			$('#page_name').text('Stats');
 		});
 		$('#home_button').on('click', function(){
 			$(activePanel).fadeOut(function(){
 				$(homePanel).fadeIn();
 			});
 			activePanel = homePanel;
+			$('#page_name').text('Iosif Mpoukas');
 		});
 		$('#rewards_button').on('click', function(){
 			$(activePanel).fadeOut(function(){
 				$(rewardsPanel).fadeIn();
 			});
 			activePanel = rewardsPanel;
+			$('#page_name').text('Rewards');
 		});
 	}
 
