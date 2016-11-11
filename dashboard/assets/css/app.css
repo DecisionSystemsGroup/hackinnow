@@ -1,25 +1,60 @@
 .app-panel, #wrapper-app{
 	display: none;
 }
+#age_chooser{
+	padding-top: 5px;
+}
 #wrapper-loader{
 	padding-top: 150px;
 }
-
-.stats{
-	padding: 15px 0px;
-	border: 1px solid rgba(215, 215, 215, 1);
+#controls{
+	background-color: rgba(33, 33, 33, 1);
+	color: rgba(240, 240, 240, 1);
+	text-align: center;
+}
+#controls #slider{
+	margin-top: 15px;
+	margin-bottom: 17px;
+}
+#controls #wrapper .col-xs-3{
+	padding: 0px;
+}
+#controls #wrapper ul{
+	padding-top: 10px;
+	font-size: 20px;
+}
+#controls #wrapper ul li{
+	display: inline;
+	padding: 0px 4px;
+}
+#controls #wrapper ul li a,
+#controls #wrapper ul li a:link,
+#controls #wrapper ul li a:visited{
+	color: rgba(244, 244, 244, 1);
+}
+#controls #wrapper #date_from, #controls #wrapper #date_to{
+	margin-top: 9px;
+}
+.noUi-connect{
+	background-color: #5F9C74 ;
+}
+#stats{
 	background-color: rgba(230, 230, 230, 1);
 }
-.stats .icon{
-	font-size: 60px;
+#stats .item{
+	padding: 0px;
+	border: 1px solid rgba(215, 215, 215, 1);
 }
-.stats .title{
+#stats .item .icon{
+	font-size: 40px;
+}
+#stats .item .title{
 	margin-top: -15px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 18px;
 }
-.stats .value{
-	margin-top: -15px;
-	font-size: 45px;
+#stats .item .value{
+	margin-top: -10px;
+	font-size: 22px;
 	font-weight: 700;
 }

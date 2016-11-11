@@ -4,11 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Dashboard</title>
 
-    <!-- Vendor files-->
-    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
-    <!-- App files -->
-    <link rel="stylesheet" href="assets/css/app.css">
+	<!-- Vendor files-->
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/css/datepicker.css">
+	<link rel="stylesheet" href="vendor/css/nouislider.min.css">
+	<!-- App files -->
+	<link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
 	<div class="container-fluid" id="wrapper-loader">
@@ -16,13 +18,13 @@
 			<i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
 		</div>
 	</div>
-    <div class="container" id="wrapper-app">
-    	<div class="app-panel" id="panel-login">
-    		Login
-    	</div>
-    	<div class="app-panel" id="panel-main">
-			<div class="row">
-				<div class="stats col-xs-3 text-center">
+	<div class="container-fluid" id="wrapper-app">
+		<div class="app-panel" id="panel-login">
+			Login
+		</div>
+		<div class="app-panel" id="panel-main">
+			<div id="stats" class="row">
+				<div class="item col-xs-2 col-xs-offset-2 text-center">
 					<div class="icon">
 						<i class="fa fa-percent" aria-hidden="true"></i>
 					</div>
@@ -33,7 +35,7 @@
 						98.9
 					</div>
 				</div>
-				<div class="stats col-xs-3 text-center">
+				<div class="item col-xs-2 text-center">
 					<div class="icon">
 						<i class="fa fa-gift" aria-hidden="true"></i>
 					</div>
@@ -44,7 +46,7 @@
 						128
 					</div>
 				</div>
-				<div class="stats col-xs-3 text-center">
+				<div class="item col-xs-2 text-center">
 					<div class="icon">
 						<i class="fa fa-share-square" aria-hidden="true"></i>
 					</div>
@@ -55,7 +57,7 @@
 						1568
 					</div>
 				</div>
-				<div class="stats col-xs-3 text-center">
+				<div class="item col-xs-2 text-center">
 					<div class="icon">
 						<i class="fa fa-users" aria-hidden="true"></i>
 					</div>
@@ -67,32 +69,78 @@
 					</div>
 				</div>
 			</div>
-    		<div class="row">
-                <div class="box col-sm-6 col-xs-12">
-                    controls      
-                </div>
-                <div class="box col-sm-6 col-xs-12">
-                    <canvas id="chart-0"></canvas>         
-                </div>
-                <div class="box col-sm-6 col-xs-12">
-                    <canvas id="chart-1"></canvas>         
-                </div>
-    			<div class="box col-sm-6 col-xs-12">
-                    <canvas id="chart-2"></canvas>         
-                </div>
-    		</div>
-    	</div>
+			<div id="controls" class="row">
+				<div id="wrapper" class="col-xs-8 col-xs-offset-2">
+					<form class="form-inline">
+						<div id="age_chooser" class="col-xs-2">
+							<label style="margin-top: 7px;">Age: <span class="slider-value"></span></label>
+						</div>
+						<div class="col-xs-3">
+
+							<div id="slider"></div>
+						</div>
+						<div class="col-xs-1" style="padding-left: 0px; padding-right: 0px;  text-align:right;">
+							<label style="margin-top: 13px;">Date</label>
+						</div>
+						<div class="form-group col-xs-2">
+							<input class="form-control input-sm" type="text" value="01-01-2016" id="date_from">
+						</div>
+						<div class="form-group col-xs-2">
+							<input class="form-control input-sm" type="text" value="12-11-2016" id="date_to">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div id="graphs">
+						<div class="box col-xs-6">
+							<canvas id="chart-0"></canvas>
+						</div>
+						<div class="box col-xs-6">
+							<canvas id="chart-1"></canvas>
+						</div>
+						<div class="box col-xs-12">
+							<canvas id="chart-2"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <!-- Vendor Scripts -->
 <script type="text/javascript" src="vendor/js/jquery.min.js"></script>
 <script type="text/javascript" src="vendor/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="vendor/js/Chart.min.js"></script>
+<script type="text/javascript" src="vendor/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="vendor/js/nouislider.min.js"></script>
 <!-- App Scripts -->
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script>
 	$(document).ready(function(){
 		app.init();
+		$('#date_from').datepicker({
+			format: 'mm-dd-yyyy'
+		});
+		$('#date_to').datepicker({
+			format: 'mm-dd-yyyy'
+		});
+		var slider = document.getElementById('slider');
+
+		noUiSlider.create(slider, {
+			start: [20, 40],
+			connect: true,
+			step: 1,
+			range: {
+				'min': 18,
+				'max': 99
+			}
+		});
+		slider.noUiSlider.on('update', function(value){
+			$('.slider-value').text((~~value[0]) + "-" + (~~value[1]));
+		});
+
 	});
 </script>
 </html>
