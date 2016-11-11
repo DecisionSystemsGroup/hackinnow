@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/master.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-2">
+
+					</div>
+					<div id="page_name" class="col-xs-8">
+						Page name
+					</div>
+					<div class="col-xs-2">
+
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div id="content" class="container-fluid">
+			<div id="home_panel" class="row">
+				Home Panel
+			</div>
+			<div id="stats_panel" class="row">
+				Stats Panel
+			</div>
+			<div id="rewards_panel" class="row">
+				Rewards Panel
+			</div>
+		</div>
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<div class="container-fluid">
+				<div id="drawer_buttons" class="row">
+					<div id="stats_button" class="button col-xs-4">
+						<a href="#">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="button col-xs-4">
+						<a id="home_button" href="#">
+							<i class="fa fa-home" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="button col-xs-4">
+						<a id="rewards_button" href="#">
+							<i class="fa fa-gift" aria-hidden="true"></i>
+						</a>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+		<script type="text/javascript" src="vendor/js/jquery-3.1.1.min.js">
+		</script>
+		<script type="text/javascript" src="assets/js/master.js">
+		</script>
+		<script>
+			$(document).ready(function(){
+				master.init();
+			});
+		</script>
+	</body>
+</html>
