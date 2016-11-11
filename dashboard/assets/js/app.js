@@ -4,8 +4,8 @@ var app = (function(){
 		,appPanel = '#wrapper-app'
 		,loaderPanel = '#wrapper-loader';
 
-	function trigger(evt, data){		
-		console.log(evt, data);
+	function trigger(evt, data){
+		console.log("Event triggered: "+evt, data);
 		switch(evt){
 		}
 	}
