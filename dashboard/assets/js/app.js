@@ -30,6 +30,9 @@ var app = (function(){
 			case 'filters-changed':
 				_createCharts();
 				break;
+			case 'app-shown':
+				_animateHeaderNumbers();
+				break;
 		}
 	}
 	
@@ -58,8 +61,18 @@ var app = (function(){
 		$(loaderPanel).hide();
 	}
 
+	function _animateHeaderNumbers(){
+		var delay = 1000;
+		$('#num-activity').animateNumber({ number: 92.4}, delay);
+		$('#num-rewards').animateNumber({ number: 128}, delay);
+		$('#num-shares').animateNumber({ number: 1568}, delay);
+		$('#num-users').animateNumber({ number: 2674}, delay);
+	}
+
 	function _showApp(){
-		$(appPanel).fadeIn('fast');
+		$(appPanel).fadeIn('fast', function(){
+			trigger('app-shown');
+		});
 	}
 
 	function _createCharts(){
