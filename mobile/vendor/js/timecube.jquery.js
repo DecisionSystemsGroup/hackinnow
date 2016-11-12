@@ -75,9 +75,13 @@
 			monthNames[10]="NOVEMBER";
 			monthNames[11]="DECEMBER";
  
- 
- 
-        	
+			var ranks=new Array(5);
+			ranks[0]="<p><b><span style=\"color:#802b00\">Bronze</span></b></p>";
+			ranks[1]="<p><b><span style=\"color:#C0C0C0\">Silver</span></b></p>";
+			ranks[2]="<p><b><span style=\"color:#e6b800\">Gold</span></b></p>";
+			ranks[3]="<p><b><span style=\"color:#00b386\">Platinum</span></b></p>";
+			ranks[4]="<p><b><span style=\"color:#3399ff\">Diamond</span></b></p>";
+			
         	// loop through the timeline data and add them to the page
         	base.eventDivs = [];
         	base.markerDivs = [];
@@ -88,7 +92,7 @@
 	        	base.eventDivs[index].addClass('event');
 	        	
 				if(base.options.showDate){
-					base.eventDivs[index].html("<span class='date'>Points Required: "+(index+1)*1000+"</span><h1>" + d.title + "</h1><p>" + d.description + "</p>");
+					base.eventDivs[index].html("<span class='date'>"+ranks[index]+"Points Required: "+(index+1)*1000+"</span><h1>" + d.title + "</h1><p>" + d.description + "</p>");
 				} else {
 					base.eventDivs[index].html("<h1>" + d.title + "</h1><p>" + d.description + "</p>");
 				}
