@@ -29,10 +29,10 @@
 						<i class="fa fa-percent" aria-hidden="true"></i>
 					</div>
 					<div class="title">
-						Percentage
+						Activity
 					</div>
 					<div class="value">
-						98.9
+						92.4
 					</div>
 				</div>
 				<div class="item col-xs-2 text-center">
@@ -70,24 +70,45 @@
 				</div>
 			</div>
 			<div id="controls" class="row">
-				<div id="wrapper" class="col-xs-8 col-xs-offset-2">
+				<div id="wrapper" class="col-xs-12">
 					<form class="form-inline">
-						<div id="age_chooser" class="col-xs-2">
-							<label style="margin-top: 7px;">Age: <span class="slider-value"></span></label>
+						<div id="age_chooser" class="col-xs-4">
+							<div class="col-xs-3">
+								<label style="margin-top: 9px;">Age: <span class="slider-value"></span></label>
+							</div>
+							<div class="col-xs-9">
+								<div id="slider"></div>
+							</div>
 						</div>
 						<div class="col-xs-3">
+							<div class="col-xs-2">
+								<label style="margin-top: 13px;">Date</label>
+							</div>
+							<div class="form-group col-xs-5">
+								<input class="form-control input-sm" type="text" value="01-01-2016" id="date_from">
+							</div>
+							<div class="form-group col-xs-5">
+								<input class="form-control input-sm" type="text" value="12-11-2016" id="date_to">
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="form-group col-xs-4">
+								<select class="form-control input-sm" id="sex">
+									<option>All</option>
+									<option>Male</option>
+									<option>Female</option>
+								</select>
+							</div>
+							<div class="col-xs-5">
+								<button class="btn btn-primary btn-sm btn-block"
+									type="button" name="button" id="groups_button">
+									Modal
+								</button>
+							</div>
+						</div>
 
-							<div id="slider"></div>
-						</div>
-						<div class="col-xs-1" style="padding-left: 0px; padding-right: 0px;  text-align:right;">
-							<label style="margin-top: 13px;">Date</label>
-						</div>
-						<div class="form-group col-xs-2">
-							<input class="form-control input-sm" type="text" value="01-01-2016" id="date_from">
-						</div>
-						<div class="form-group col-xs-2">
-							<input class="form-control input-sm" type="text" value="12-11-2016" id="date_to">
-						</div>
+
+
 					</form>
 				</div>
 			</div>

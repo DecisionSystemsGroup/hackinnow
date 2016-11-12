@@ -35,8 +35,14 @@
 #controls #wrapper #date_from, #controls #wrapper #date_to{
 	margin-top: 9px;
 }
+#groups_button{
+	margin-top: 9px;
+}
 .noUi-connect{
 	background-color: #5F9C74 ;
+}
+#sex{
+	margin-top: 9px;
 }
 #stats{
 	background-color: rgba(230, 230, 230, 1);
@@ -58,10 +64,9 @@
 	font-size: 22px;
 	font-weight: 700;
 }
-
 .word-cloud>h1{
-	color: gray;
-	font-weight: bolder;
+	color: #666;
+	font-weight: 400;
 }
 .word-cloud>canvas{
 	padding-top: 80px;
