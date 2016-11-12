@@ -182,8 +182,8 @@ a#prev-link.active, a#prev-link.disabled {
 
 
 .timeCube > .container > .event > h1 {
-	font-family: UnitSlabPro-Medi;
-	color: #0793cc;
+	font-family: Helvetica;
+	color: #5F9C74;
 	font-size: 40px;
 	margin: 0px 24px;
 	height: 54px;

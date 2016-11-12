@@ -23,7 +23,7 @@ var master = (function(){
 				$(infoPanel).fadeIn();
 			});
 			activePanel = infoPanel;
-			$('#page_name').text('kati sto text re seiv');
+			$('#page_name').text('Information');
 		});
 		$('#login_btn').on('click', function(){
 			$(loginPanel).fadeOut(function(){
