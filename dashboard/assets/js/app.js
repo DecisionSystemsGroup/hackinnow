@@ -68,21 +68,21 @@ var app = (function(){
 			charts[index].obj.destroy();
 		}
 		var chartData = {
-		    labels: [65, 59, 80, 81, 56, 55, 40],
+		    labels: ['General score', 'Stability', 'Score Range', 'Active Time', 'Smoothness'],
 		    datasets: [
 		        {
-		            label: "Iosif Mpoukas",
+		            label: "Average Group Values",
 					backgroundColor: charts[index].colors[0],
 					borderColor: charts[index].colors[1],
 					borderWidth: 1,
-		            data: [65, 59, 80, 81, 56, 55, 40]
+		            data: _shuffle([75, 69, 83, 63, 77])
 		        },
 		        {
-		            label: "Petros Petras",
+		            label: "Goal Values",
 					backgroundColor: charts[index+1].colors[0],
 					borderColor: charts[index+1].colors[1],
 					borderWidth: 1,
-		            data: [81, 56, 55, 40, 65, 59, 80]
+		            data: [88, 90, 80, 90, 80]
 		        }
 		    ]
     	};
@@ -101,7 +101,7 @@ var app = (function(){
 				title: {
 					display: true,
 					fontSize: 25,
-					text: 'Some Title'
+					text: 'Driving Behavior'
 				},
 				animation: {
 					duration: 2000,
@@ -201,6 +201,26 @@ var app = (function(){
 				}
 			}
 		});
+	}
+
+	function _shuffle(array) {
+	    let counter = array.length;
+
+	    // While there are elements in the array
+	    while (counter > 0) {
+	        // Pick a random index
+	        let index = Math.floor(Math.random() * counter);
+
+	        // Decrease counter by 1
+	        counter--;
+
+	        // And swap the last element with it
+	        let temp = array[counter];
+	        array[counter] = array[index];
+	        array[index] = temp;
+	    }
+
+	    return array;
 	}
 
 	return {
