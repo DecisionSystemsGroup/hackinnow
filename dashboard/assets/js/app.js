@@ -5,7 +5,7 @@ var app = (function(){
 		,loaderPanel = '#wrapper-loader'
 		,charts = [
 			{
-				type: 'line'
+				type: 'bar'
 				,wrapper: 'chart-0'
 				,colors: ['rgba(95, 156, 116 ,0.4)', '#5D6A64']
 				,obj: undefined
@@ -13,7 +13,7 @@ var app = (function(){
 			{
 				type: 'doughnut'
 				,wrapper: 'chart-1'
-				,colors: ['#8DB4A3', '#273C41']
+				,colors: ['#8DB4A3','#5B7C7D', '#5F9C74', '#C2D2BD', '#273C41']
 				,obj: undefined
 			},
 			{
@@ -27,6 +27,9 @@ var app = (function(){
 	function trigger(evt, data){
 		console.log("Event triggered: "+evt, data);
 		switch(evt){
+			case 'filters-changed':
+				_createCharts();
+				break;
 		}
 	}
 	
@@ -73,11 +76,18 @@ var app = (function(){
 					borderColor: charts[index].colors[1],
 					borderWidth: 1,
 		            data: [65, 59, 80, 81, 56, 55, 40]
+		        },
+		        {
+		            label: "Petros Petras",
+					backgroundColor: charts[index+1].colors[0],
+					borderColor: charts[index+1].colors[1],
+					borderWidth: 1,
+		            data: [81, 56, 55, 40, 65, 59, 80]
 		        }
 		    ]
-    };
+    	};
 		var ctx = document.getElementById(charts[index].wrapper);
-		charts[index] = new Chart(ctx,{
+		charts[index].obj = new Chart(ctx,{
 			type: charts[index].type,
 			data: chartData,
 			options: {
@@ -87,9 +97,35 @@ var app = (function(){
 							beginAtZero:true
 						}
 					}]
+				},
+				title: {
+					display: true,
+					fontSize: 25,
+					text: 'Some Title'
+				},
+				animation: {
+					duration: 2000,
+					animateScale: true,
+					animateRotate: true
 				}
 			}
 		});
+	}
+
+	function getRandom(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min)) + min;
+	}
+
+	function getRandomLevelDistribution(){
+		var arrs = [
+			[30, 18, 29, 15, 8],
+			[39, 19, 24, 12, 6],
+			[24, 23, 28, 14, 10],
+			[31, 22, 32, 13, 4]
+		];
+		return arrs[getRandom(0, 3)];
 	}
 
 	function _createChart1(){
@@ -97,22 +133,27 @@ var app = (function(){
 		if(charts[index].obj !== undefined){
 			charts[index].obj.destroy();
 		}
+
 		var chartData = {
-			labels: ['Label1', 'Label2'],
+			labels: ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond'],
 			datasets: [{
-				data: [78, 22],
+				data: getRandomLevelDistribution(),
+				backgroundColor: charts[index].colors
+			},
+			{
+				data: [24, 21, 31, 15, 9],
 				backgroundColor: charts[index].colors
 			}]
 		};
 		var ctx = document.getElementById(charts[index].wrapper);
-		charts[index] = new Chart(ctx,{
+		charts[index].obj = new Chart(ctx,{
 			type: charts[index].type,
 			data: chartData,
 			options: {
 				title: {
 					display: true,
 					fontSize: 25,
-					text: 'Some Title'
+					text: 'Level Distribution'
 				},
 				animation: {
 					duration: 1500,
@@ -144,7 +185,7 @@ var app = (function(){
 			]
 		};
 		var ctx = document.getElementById(charts[index].wrapper);
-		charts[index] = new Chart(ctx,{
+		charts[index].obj = new Chart(ctx,{
 			type: charts[index].type,
 			data: chartData,
 			options: {

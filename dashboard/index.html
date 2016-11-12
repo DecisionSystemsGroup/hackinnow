@@ -122,9 +122,13 @@
 		app.init();
 		$('#date_from').datepicker({
 			format: 'mm-dd-yyyy'
+		}).on('changeDate', function(){
+			app.trigger('filters-changed');
 		});
 		$('#date_to').datepicker({
 			format: 'mm-dd-yyyy'
+		}).on('changeDate', function(){
+			app.trigger('filters-changed');
 		});
 		var slider = document.getElementById('slider');
 
@@ -139,6 +143,7 @@
 		});
 		slider.noUiSlider.on('update', function(value){
 			$('.slider-value').text((~~value[0]) + "-" + (~~value[1]));
+			app.trigger('filters-changed');
 		});
 
 	});
