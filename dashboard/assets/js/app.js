@@ -187,10 +187,10 @@ var app = (function(){
 	function getRandomRadarValues(){
 		var arrs = [
 			[5, 1, 7, 7, 3],
-			[17, 7, 9, 9, 0],
-			[13, 2, 8, 7, 1],
-			[3, 1, 6, 8, 7],
-			[10, 2, 7, 5, 2]
+			[17, 7, 9, 9, 9],
+			[13, 2, 8, 7, 7],
+			[3, 1, 6, 8, 4],
+			[10, 2, 7, 5, 10]
 		];
 		return arrs[getRandom(0, 3)];
 	}
@@ -211,7 +211,7 @@ var app = (function(){
 				{
 					label: 'Target Values',
 					backgroundColor: charts[index].colors[1],
-					data: [14, 3, 9, 10, 0]
+					data: [14, 5, 9, 10, 11]
 				}
 			]
 		};
