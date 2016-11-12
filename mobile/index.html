@@ -64,16 +64,19 @@
 				</div>
 				
 			</div>
-			<div id="home_panel" class="">
+			<div id="home_panel" class="row">
 				<div class="row">
-					<h2 class="text-center">Some Score</h2>
+					<h2 class="text-center">3758 Points</h2>
 					<div id="demo-pie-3"
 						class="pie-title-center col-xs-10 col-xs-offset-1"
-						data-percent="+15">
+						data-percent="+75">
 
 						<span class="pie-value"></span>
+						
 					</div>
+					<p class="text-center col-xs-10 col-xs-offset-1">For next Level</p>
 				</div>
+
 				<div class="row">
 					<h2 class="text-center" >Some Other Score</h2>
 					<div id="demo-pie-4"
@@ -137,7 +140,7 @@
 					lineWidth: 25,
 					rotate: -90,
 					onStep: function (from, to, percent) {
-						$(this.element).find('.pie-value').html(Math.round(percent) );
+						$(this.element).find('.pie-value').html(Math.round(percent)+"%" );
 					}
 				});
 

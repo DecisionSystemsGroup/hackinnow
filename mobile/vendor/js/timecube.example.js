@@ -15,17 +15,17 @@ document.body.addEventListener('touchmove', function(e){
 
 var json = [{
 				title: '<span class=\"timeTitle\">Pizzafan</span>',
-				description: "-50% σε όλες τις πίτσες <br><span style=\"color:#00b300;border: 1px solid #808080;border-radius: 5px;padding :3px\"><b>Access granted..</b></span>",
+				description: "-50% σε όλες τις πίτσες <br><span style=\"color:#00b300;border: 1px solid #808080;border-radius: 5px;padding :3px\"><b>More Info..</b></span>",
 				startDate: (new Date('August 5, 2009 00:00:00 pm GMT+0')),
 				endDate: null
 			},
 			{        title: '<span class=\"timeTitle\">Village Cinemas</span>',
-				description: "2 εισιτήρια στην τιμή του ενός <br><span style=\"color:#00b300;border: 1px solid #808080;border-radius: 5px;padding :3px\"><b>Access granted..</b></span>",
+				description: "2 εισιτήρια στην τιμή του ενός <br><span style=\"color:#00b300;border: 1px solid #808080;border-radius: 5px;padding :3px\"><b>More Info..</b></span>",
 				startDate: (new Date('August 10, 2009 00:00:00 am GMT+0')),
 				endDate: null
 			},
             {     title: '<span class=\"timeTitle\">Allou! Fun Park</span>',
-				description: "2 ΗΜΕΡΗΣΙΑ PASS ΣΤΗΝ ΤΙΜΗ ΤΟΥ 1 <br><span style=\"color:#00b300;border: 1px solid #808080;border-radius: 5px;padding :3px\"><b>Access granted..</b></span>",
+				description: "2 ΗΜΕΡΗΣΙΑ PASS ΣΤΗΝ ΤΙΜΗ ΤΟΥ 1 <br><span style=\"color:#00b300;border: 1px solid #808080;border-radius: 5px;padding :3px\"><b>More Info..</b></span>",
 				startDate: (new Date('August 15, 2009 00:00:00 am GMT+0')),
 				endDate: null
 			},
