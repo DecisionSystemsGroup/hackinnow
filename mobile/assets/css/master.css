@@ -1,12 +1,14 @@
 body{
 	padding-top: 70px;
 	padding-bottom: 70px;
+	background: url("../img/agsquare.png"); 
 }
+
 #content-wrapper{
 
 	margin-top:45px;
 }
-#home_panel, #stats_panel, #rewards_panel, .navbar{
+#home_panel, #stats_panel, #rewards_panel, .navbar, #info_panel{
 	display: none;
 }
 #drawer_buttons .button{

@@ -2,8 +2,9 @@ var master = (function(){
 	var
 		homePanel= '#home_panel',
 		loginPanel= '#login_panel',
-		statsPanel = '#stats_panel',
+		infoPanel = '#info_panel',
 		rewardsPanel = '#rewards_panel'
+		
 		activePanel = '';
 
 	function trigger(evt, data){
@@ -17,11 +18,12 @@ var master = (function(){
 	}
 
 	function _eventListeners(){
-		$('#stats_button').on('click', function(){
+		$('#info_button').on('click', function(){
 			$(activePanel).fadeOut(function(){
-				$(loginPanel).fadeIn();
+				$(infoPanel).fadeIn();
 			});
-			activePanel = loginPanel;
+			activePanel = infoPanel;
+			$('#page_name').text('kati sto text re seiv');
 		});
 		$('#login_btn').on('click', function(){
 			$(loginPanel).fadeOut(function(){
