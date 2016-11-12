@@ -100,8 +100,12 @@
 						<div class="box col-xs-6">
 							<canvas id="chart-1"></canvas>
 						</div>
-						<div class="box col-xs-12">
+						<div class="box col-xs-8">
 							<canvas id="chart-2"></canvas>
+						</div>
+						<div class="box col-xs-4 word-cloud text-center">
+							<h1>Facebook Keywords</h1>
+							<canvas id="chart-3"></canvas>
 						</div>
 					</div>
 				</div>
@@ -115,6 +119,7 @@
 <script type="text/javascript" src="vendor/js/Chart.min.js"></script>
 <script type="text/javascript" src="vendor/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="vendor/js/nouislider.min.js"></script>
+<script type="text/javascript" src="vendor/js/wordcloud2.js"></script>
 <!-- App Scripts -->
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script>
@@ -145,7 +150,6 @@
 			$('.slider-value').text((~~value[0]) + "-" + (~~value[1]));
 			app.trigger('filters-changed');
 		});
-
 	});
 </script>
 </html>

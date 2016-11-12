@@ -60,6 +60,7 @@ var app = (function(){
 		_createChart0();
 		_createChart1();
 		_createChart2();
+		_createWordCloud();
 	}
 
 	function _createChart0(){
@@ -234,6 +235,14 @@ var app = (function(){
 	    return array;
 	}
 
+	function _createWordCloud(){
+			var tags = [['movies', 65], ['phone', 77], ['cars', 75], ['music', 65], ['food', 68], ['driver', 39], ['road', 67], ['trip', 58], ['speed', 33], ['travel', 28], ['distance', 55], ['bike', 44], ['cocktail', 67], ['bar', 77], ['nervous', 55], ['anxious', 22], ['fuck', 11], ['acceleration', 37], ['family', 25], ['weekend', 46], ['fast', 33], ['slow', 13], ['riding', 7], ['reckless', 4], ['police', 8], ['damage', 11], ['malfunction', 16], ['engine', 28], ['traffic', 33], ['beer', 44], ['wheelie', 12], ['crash', 8], ['hurry', 7], ['running', 18]];
+		WordCloud(document.getElementById('chart-3'), { list: tags, color: _getRandomColor } );
+	}
+	function _getRandomColor(){
+		var c = ['#5F9C74', '#8DB4A3', '#5D6A64', '#273C41', '#5B7C7D', '#025939', '#60A68C', '#025930'];
+		return c[getRandom(0, c.length)];
+	}
 	return {
 		trigger: trigger,
 		init: init
