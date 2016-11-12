@@ -45,6 +45,9 @@ var app = (function(){
 		$('#sex').on('change', function(){
 			trigger('filters-changed');
 		});
+		$('#modal-confirm').on('click', function(){
+			setTimeout(function(){alertify.success("You have successfully assigned a new reward!");}, 500);
+		});
 	}
 	
 	function _showDefaultPanel(){
