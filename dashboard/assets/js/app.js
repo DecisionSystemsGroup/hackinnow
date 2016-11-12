@@ -19,7 +19,7 @@ var app = (function(){
 			{
 				type: 'radar'
 				,wrapper: 'chart-2'
-				,colors: ['#C2D2BD', '#5D6A64']
+				,colors: ['rgba(194, 210, 189, 0.7)', '#5F9C74']
 				,obj: undefined
 			}
 		];
@@ -164,23 +164,34 @@ var app = (function(){
 		});
 	}
 
+	function getRandomRadarValues(){
+		var arrs = [
+			[5, 1, 7, 7, 3],
+			[17, 7, 9, 9, 0],
+			[13, 2, 8, 7, 1],
+			[3, 1, 6, 8, 7],
+			[10, 2, 7, 5, 2]
+		];
+		return arrs[getRandom(0, 3)];
+	}
+
 	function _createChart2(){
 		var index = 2;
 		if(charts[index].obj !== undefined){
 			charts[index].obj.destroy();
 		}
 		var chartData = {
-			labels: ["Connections", "Stability", "Smoothness", "General score"],
+			labels: ['Weekly Connections', 'Active Contracts', 'General Score(1/10)', 'Stability(1/10)', 'Triggered Words'],
 			datasets: [
 				{
 					label: 'Average User',
 					backgroundColor: charts[index].colors[0],
-					data: [49, 33, 44, 70]
+					data: getRandomRadarValues()
 				},
 				{
 					label: 'Target Values',
 					backgroundColor: charts[index].colors[1],
-					data: [59, 49, 155, 93]
+					data: [14, 3, 9, 10, 0]
 				}
 			]
 		};
@@ -192,7 +203,7 @@ var app = (function(){
 				title: {
 					display: true,
 					fontSize: 25,
-					text: 'Some Title'
+					text: 'Data-model Comparison'
 				},
 				animation: {
 					duration: 1500,
