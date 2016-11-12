@@ -1,6 +1,7 @@
 var master = (function(){
 	var
 		homePanel= '#home_panel',
+		loginPanel= '#login_panel',
 		statsPanel = '#stats_panel',
 		rewardsPanel = '#rewards_panel'
 		activePanel = '';
@@ -12,18 +13,23 @@ var master = (function(){
 	}
 
 	function init(){
-		$('#page_name').text('Iosif Mpoukas');
-		_showPanel(homePanel);
 		_eventListeners();
 	}
 
 	function _eventListeners(){
 		$('#stats_button').on('click', function(){
 			$(activePanel).fadeOut(function(){
-				$(statsPanel).fadeIn();
+				$(loginPanel).fadeIn();
 			});
-			activePanel = statsPanel;
-			$('#page_name').text('Stats');
+			activePanel = loginPanel;
+		});
+		$('#login_btn').on('click', function(){
+			$(loginPanel).fadeOut(function(){
+				$('.navbar').fadeIn();
+				$(homePanel).fadeIn();
+			});
+			activePanel = homePanel;
+			$('#page_name').text('Iosif Mpoukas');
 		});
 		$('#home_button').on('click', function(){
 			$(activePanel).fadeOut(function(){
