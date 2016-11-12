@@ -88,7 +88,7 @@
 	        	base.eventDivs[index].addClass('event');
 	        	
 				if(base.options.showDate){
-					base.eventDivs[index].html("<span class='date'>" + monthNames[d.startDate.getUTCMonth()] + " " + d.startDate.getUTCDate() + ", " + d.startDate.getUTCFullYear() + "</span><h1>" + d.title + "</h1><p>" + d.description + "</p>");
+					base.eventDivs[index].html("<span class='date'>Points Required: "+(index+1)*1000+"</span><h1>" + d.title + "</h1><p>" + d.description + "</p>");
 				} else {
 					base.eventDivs[index].html("<h1>" + d.title + "</h1><p>" + d.description + "</p>");
 				}
@@ -351,14 +351,14 @@
 				$(base.options.nextButton).bind((base.touch ? 'touchstart' : 'mousedown touchstart'), function(evt) {
 					evt.preventDefault();
 					if(base.currentIndex < (base.options.data.length - 1)){
-						$(base.options.nextButton).addClass('active');
+						if (index==2)$(base.options.nextButton).addClass('active');
 						base.snapToIndex(base.currentIndex + 1);
 					}
 				});
 				
 				$(base.options.nextButton).bind((base.touch ? 'touchend' : 'mouseup touchend'), function(evt) {
 					evt.preventDefault();
-					$(base.options.nextButton).removeClass('active');
+					// $(base.options.nextButton).removeClass('active');
 				});					
 			}
 							
@@ -369,7 +369,7 @@
 				$(base.options.previousButton).bind((base.touch ? 'touchstart' : 'mousedown touchstart'), function(evt) {
 					evt.preventDefault();
 					if(base.currentIndex > 0){
-						$(base.options.previousButton).addClass('active');
+						if (index==2)$(base.options.previousButton).addClass('active');
 						base.snapToIndex(base.currentIndex - 1);
 					}
 					return false;
@@ -377,7 +377,7 @@
 			
 				$(base.options.previousButton).bind((base.touch ? 'touchend' : 'mouseup touchend'), function(evt) {
 					evt.preventDefault();
-					$(base.options.previousButton).removeClass('active');
+					// $(base.options.previousButton).removeClass('active');
 				});						
 			}
 
@@ -387,7 +387,7 @@
 
 
 			// Snap to the first timeline event
-			base.snapToIndex(0);
+			base.snapToIndex(2);
 
 
 
@@ -503,9 +503,9 @@
 						
 			// Activate the marker
 			$(base.markerDivs).each(function(i, m){
-				m.removeClass('active');
+				// m.removeClass('active');
 			});
-			$(base.markerDivs[index]).addClass('active');	
+			if (index==2)$(base.markerDivs[index]).addClass('active');	
 			
 			
 			// enable or disable previous & next controls

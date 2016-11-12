@@ -7,9 +7,9 @@ body {
 }
 #content-wrapper {
 	background: white;
-	width: 100%;
+	width: 420px;
 	height: 250px;
-	position: absolute;
+	position: apsolute;
 	top: 0px;
 	overflow: hidden;
 }
@@ -107,21 +107,26 @@ a#prev-link.active, a#prev-link.disabled {
 }
 
 .timeCube > .nav > .line > .marker {
-	background: rgba(0,0,0,1);
-	height: 16px;
-	width: 16px;
+	background: #5F9C74;
+	height: 30px;
+	width: 30px;
 	position: absolute;
-	border-radius: 8px;
-	margin-left: -8px;
-	margin-top: -7px;
+	border-radius: 15px;
+	margin-left: -15px;
+	margin-top: -15px;
 	-webkit-transform: scale(.4);
 	-webkit-transition-property: -webkit-transform, background;
 	-webkit-transition-duration: 400ms;
 }
 
+.active~.marker {
+	background: #273C41 !important;
+	/* opacity: .6; */
+}
+
 .timeCube > .nav > .line > .marker.active {
 	-webkit-transform: scale(.8);
-	background: rgba(30, 127, 194, 1);
+	background: #5F9C74;
 	-webkit-transition-property: -webkit-transform, background;
 	-webkit-transition-duration: 400ms;
 	z-index: 999;
