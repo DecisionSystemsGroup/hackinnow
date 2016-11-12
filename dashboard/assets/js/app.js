@@ -42,6 +42,9 @@ var app = (function(){
 	}
 
 	function _eventListeners(){
+		$('#sex').on('change', function(){
+			trigger('filters-changed');
+		});
 	}
 	
 	function _showDefaultPanel(){
