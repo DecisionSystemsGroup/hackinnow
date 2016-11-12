@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 		<link rel="stylesheet" href="vendor/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/master.css">
+		<link rel="stylesheet" href="vendor/css/bootstrap-social.css">
 
 		<link rel="stylesheet" type="text/css" href="vendor/css/timecube.jquery.css">
 
@@ -29,8 +30,39 @@
 		</nav>
 		<div id="content" class="container-fluid">
 			<div id="login_panel" class="container">
-				<button class="btn btn-success" id="login_btn" type="button"
-				name="button">Login</button>
+			
+				<div class="page-header">
+					<h1>Title Name Yo</h1>
+				</div>
+				
+			<div class="container-fluid">
+					<p><h3><b>Login...</b></h3></p> 
+				
+				
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				</div>
+			<div id="login_btn">
+				<div class="col-xs-4 ">
+					<button class="btn btn-success btn-block btn-sm" type="button"
+					name="button">Login</button>
+				 
+				</div>
+				
+			
+				<div class="col-xs-8 ">
+				<a class="btn btn-block btn-social btn-sm btn-facebook">
+					<span class="fa fa-facebook"></span> Login with Facebook
+				</a>
+				</div>
+				</div>
+				</div>
+				
 			</div>
 			<div id="home_panel" class="">
 				<div class="row">
@@ -58,8 +90,10 @@
 			</div>
 			<div id="rewards_panel" class="row">
 				Rewards panel
+				<div class="container">
 				<div id="content-wrapper col-xs-10 col-xs-offset-1">
 					<div id="timeline" class="timeCube"></div>
+				</div>
 				</div>
 			</div>
 		</div>
